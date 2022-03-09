@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.x</groupId>
+        <artifactId>flower</artifactId>
+        <version>0.0.1</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    
+    <groupId>org.x</groupId>
+    <artifactId>flower-server</artifactId>
+    <version>${flower.server.version}</version>
+    <packaging>pom</packaging>
+    <name>flower-server</name>
+
+    <modules>
+        <module>flower-server-client</module>
+        <module>flower-server-adapter</module>
+        <module>flower-server-app</module>
+        <module>flower-server-domain</module>
+        <module>flower-server-infrastructure</module>
+        <module>flower-server-start</module>
+    </modules>
+    <properties>
+        <flower.server.version>0.0.1</flower.server.version>
+    </properties>
+
+    <dependencies>
+
+    </dependencies>
+
+    <build>
+
+    </build>
+</project>
