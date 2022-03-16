@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(scanBasePackages = {"org.x.flower","com.alibaba.cola"})
-@MapperScan("org.x.flower.repository")
+@MapperScan("org.x.flower")
 public class Application {
 
     public static void main(String[] args) {

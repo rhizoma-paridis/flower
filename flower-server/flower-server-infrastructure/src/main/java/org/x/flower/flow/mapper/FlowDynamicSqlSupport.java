@@ -19,7 +19,7 @@ public final class FlowDynamicSqlSupport {
 
     public static final SqlColumn<LocalDateTime> startTime = flow.startTime;
 
-    public static final SqlColumn<String> trigger = flow.trigger;
+    public static final SqlColumn<String> scheduleInterval = flow.scheduleInterval;
 
     public static final SqlColumn<Integer> triggerType = flow.triggerType;
 
@@ -27,7 +27,7 @@ public final class FlowDynamicSqlSupport {
 
     public static final SqlColumn<Integer> flowType = flow.flowType;
 
-    public static final SqlColumn<String> desc = flow.desc;
+    public static final SqlColumn<String> remark = flow.remark;
 
     public static final SqlColumn<LocalDateTime> createTime = flow.createTime;
 
@@ -46,7 +46,7 @@ public final class FlowDynamicSqlSupport {
 
         public final SqlColumn<LocalDateTime> startTime = column("start_time", JDBCType.TIMESTAMP);
 
-        public final SqlColumn<String> trigger = column("trigger", JDBCType.VARCHAR);
+        public final SqlColumn<String> scheduleInterval = column("schedule_interval", JDBCType.VARCHAR);
 
         public final SqlColumn<Integer> triggerType = column("trigger_type", JDBCType.INTEGER);
 
@@ -54,7 +54,7 @@ public final class FlowDynamicSqlSupport {
 
         public final SqlColumn<Integer> flowType = column("flow_type", JDBCType.INTEGER);
 
-        public final SqlColumn<String> desc = column("desc", JDBCType.VARCHAR);
+        public final SqlColumn<String> remark = column("remark", JDBCType.VARCHAR);
 
         public final SqlColumn<LocalDateTime> createTime = column("create_time", JDBCType.TIMESTAMP);
 

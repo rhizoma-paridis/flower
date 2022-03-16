@@ -22,7 +22,7 @@ public class FlowDo implements Serializable {
 
     private LocalDateTime startTime;
 
-    private String trigger;
+    private String scheduleInterval;
 
     private Integer triggerType;
 
@@ -30,7 +30,7 @@ public class FlowDo implements Serializable {
 
     private Integer flowType;
 
-    private String desc;
+    private String remark;
 
     private LocalDateTime createTime;
 

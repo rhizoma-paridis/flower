@@ -23,7 +23,7 @@ import static org.x.flower.flow.mapper.FlowDynamicSqlSupport.*;
 
 @Mapper
 public interface FlowMapper extends CommonCountMapper, CommonDeleteMapper, CommonInsertMapper<FlowDo>, CommonUpdateMapper {
-    BasicColumn[] selectList = BasicColumn.columnList(id, flowName, isDisable, nextTriggerTime, startTime, trigger, triggerType, fillBackSequence, flowType, desc, createTime, updateTime, dag);
+    BasicColumn[] selectList = BasicColumn.columnList(id, flowName, isDisable, nextTriggerTime, startTime, scheduleInterval, triggerType, fillBackSequence, flowType, remark, createTime, updateTime, dag);
 
     @SelectProvider(type=SqlProviderAdapter.class, method="select")
     @Results(id="FlowResult", value = {
@@ -32,11 +32,11 @@ public interface FlowMapper extends CommonCountMapper, CommonDeleteMapper, Commo
         @Result(column="is_disable", property="isDisable", jdbcType=JdbcType.TINYINT),
         @Result(column="next_trigger_time", property="nextTriggerTime", jdbcType=JdbcType.TIMESTAMP),
         @Result(column="start_time", property="startTime", jdbcType=JdbcType.TIMESTAMP),
-        @Result(column="trigger", property="trigger", jdbcType=JdbcType.VARCHAR),
+        @Result(column="schedule_interval", property="scheduleInterval", jdbcType=JdbcType.VARCHAR),
         @Result(column="trigger_type", property="triggerType", jdbcType=JdbcType.INTEGER),
         @Result(column="fill_back_sequence", property="fillBackSequence", jdbcType=JdbcType.INTEGER),
         @Result(column="flow_type", property="flowType", jdbcType=JdbcType.INTEGER),
-        @Result(column="desc", property="desc", jdbcType=JdbcType.VARCHAR),
+        @Result(column="remark", property="remark", jdbcType=JdbcType.VARCHAR),
         @Result(column="create_time", property="createTime", jdbcType=JdbcType.TIMESTAMP),
         @Result(column="update_time", property="updateTime", jdbcType=JdbcType.TIMESTAMP),
         @Result(column="dag", property="dag", jdbcType=JdbcType.LONGVARCHAR)
@@ -68,11 +68,11 @@ public interface FlowMapper extends CommonCountMapper, CommonDeleteMapper, Commo
             .map(isDisable).toProperty("isDisable")
             .map(nextTriggerTime).toProperty("nextTriggerTime")
             .map(startTime).toProperty("startTime")
-            .map(trigger).toProperty("trigger")
+            .map(scheduleInterval).toProperty("scheduleInterval")
             .map(triggerType).toProperty("triggerType")
             .map(fillBackSequence).toProperty("fillBackSequence")
             .map(flowType).toProperty("flowType")
-            .map(desc).toProperty("desc")
+            .map(remark).toProperty("remark")
             .map(createTime).toProperty("createTime")
             .map(updateTime).toProperty("updateTime")
             .map(dag).toProperty("dag")
@@ -86,11 +86,11 @@ public interface FlowMapper extends CommonCountMapper, CommonDeleteMapper, Commo
             .map(isDisable).toProperty("isDisable")
             .map(nextTriggerTime).toProperty("nextTriggerTime")
             .map(startTime).toProperty("startTime")
-            .map(trigger).toProperty("trigger")
+            .map(scheduleInterval).toProperty("scheduleInterval")
             .map(triggerType).toProperty("triggerType")
             .map(fillBackSequence).toProperty("fillBackSequence")
             .map(flowType).toProperty("flowType")
-            .map(desc).toProperty("desc")
+            .map(remark).toProperty("remark")
             .map(createTime).toProperty("createTime")
             .map(updateTime).toProperty("updateTime")
             .map(dag).toProperty("dag")
@@ -104,11 +104,11 @@ public interface FlowMapper extends CommonCountMapper, CommonDeleteMapper, Commo
             .map(isDisable).toPropertyWhenPresent("isDisable", row::getIsDisable)
             .map(nextTriggerTime).toPropertyWhenPresent("nextTriggerTime", row::getNextTriggerTime)
             .map(startTime).toPropertyWhenPresent("startTime", row::getStartTime)
-            .map(trigger).toPropertyWhenPresent("trigger", row::getTrigger)
+            .map(scheduleInterval).toPropertyWhenPresent("scheduleInterval", row::getScheduleInterval)
             .map(triggerType).toPropertyWhenPresent("triggerType", row::getTriggerType)
             .map(fillBackSequence).toPropertyWhenPresent("fillBackSequence", row::getFillBackSequence)
             .map(flowType).toPropertyWhenPresent("flowType", row::getFlowType)
-            .map(desc).toPropertyWhenPresent("desc", row::getDesc)
+            .map(remark).toPropertyWhenPresent("remark", row::getRemark)
             .map(createTime).toPropertyWhenPresent("createTime", row::getCreateTime)
             .map(updateTime).toPropertyWhenPresent("updateTime", row::getUpdateTime)
             .map(dag).toPropertyWhenPresent("dag", row::getDag)
@@ -143,11 +143,11 @@ public interface FlowMapper extends CommonCountMapper, CommonDeleteMapper, Commo
                 .set(isDisable).equalTo(row::getIsDisable)
                 .set(nextTriggerTime).equalTo(row::getNextTriggerTime)
                 .set(startTime).equalTo(row::getStartTime)
-                .set(trigger).equalTo(row::getTrigger)
+                .set(scheduleInterval).equalTo(row::getScheduleInterval)
                 .set(triggerType).equalTo(row::getTriggerType)
                 .set(fillBackSequence).equalTo(row::getFillBackSequence)
                 .set(flowType).equalTo(row::getFlowType)
-                .set(desc).equalTo(row::getDesc)
+                .set(remark).equalTo(row::getRemark)
                 .set(createTime).equalTo(row::getCreateTime)
                 .set(updateTime).equalTo(row::getUpdateTime)
                 .set(dag).equalTo(row::getDag);
@@ -159,11 +159,11 @@ public interface FlowMapper extends CommonCountMapper, CommonDeleteMapper, Commo
                 .set(isDisable).equalToWhenPresent(row::getIsDisable)
                 .set(nextTriggerTime).equalToWhenPresent(row::getNextTriggerTime)
                 .set(startTime).equalToWhenPresent(row::getStartTime)
-                .set(trigger).equalToWhenPresent(row::getTrigger)
+                .set(scheduleInterval).equalToWhenPresent(row::getScheduleInterval)
                 .set(triggerType).equalToWhenPresent(row::getTriggerType)
                 .set(fillBackSequence).equalToWhenPresent(row::getFillBackSequence)
                 .set(flowType).equalToWhenPresent(row::getFlowType)
-                .set(desc).equalToWhenPresent(row::getDesc)
+                .set(remark).equalToWhenPresent(row::getRemark)
                 .set(createTime).equalToWhenPresent(row::getCreateTime)
                 .set(updateTime).equalToWhenPresent(row::getUpdateTime)
                 .set(dag).equalToWhenPresent(row::getDag);
@@ -175,11 +175,11 @@ public interface FlowMapper extends CommonCountMapper, CommonDeleteMapper, Commo
             .set(isDisable).equalTo(row::getIsDisable)
             .set(nextTriggerTime).equalTo(row::getNextTriggerTime)
             .set(startTime).equalTo(row::getStartTime)
-            .set(trigger).equalTo(row::getTrigger)
+            .set(scheduleInterval).equalTo(row::getScheduleInterval)
             .set(triggerType).equalTo(row::getTriggerType)
             .set(fillBackSequence).equalTo(row::getFillBackSequence)
             .set(flowType).equalTo(row::getFlowType)
-            .set(desc).equalTo(row::getDesc)
+            .set(remark).equalTo(row::getRemark)
             .set(createTime).equalTo(row::getCreateTime)
             .set(updateTime).equalTo(row::getUpdateTime)
             .set(dag).equalTo(row::getDag)
@@ -193,11 +193,11 @@ public interface FlowMapper extends CommonCountMapper, CommonDeleteMapper, Commo
             .set(isDisable).equalToWhenPresent(row::getIsDisable)
             .set(nextTriggerTime).equalToWhenPresent(row::getNextTriggerTime)
             .set(startTime).equalToWhenPresent(row::getStartTime)
-            .set(trigger).equalToWhenPresent(row::getTrigger)
+            .set(scheduleInterval).equalToWhenPresent(row::getScheduleInterval)
             .set(triggerType).equalToWhenPresent(row::getTriggerType)
             .set(fillBackSequence).equalToWhenPresent(row::getFillBackSequence)
             .set(flowType).equalToWhenPresent(row::getFlowType)
-            .set(desc).equalToWhenPresent(row::getDesc)
+            .set(remark).equalToWhenPresent(row::getRemark)
             .set(createTime).equalToWhenPresent(row::getCreateTime)
             .set(updateTime).equalToWhenPresent(row::getUpdateTime)
             .set(dag).equalToWhenPresent(row::getDag)
