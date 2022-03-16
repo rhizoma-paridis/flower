@@ -11,9 +11,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     
-    <groupId>org.x</groupId>
     <artifactId>flower-server-app</artifactId>
-    <version>${flower.server.version}</version>
     <packaging>jar</packaging>
     <name>flower-server-app</name>
 
