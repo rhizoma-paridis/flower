@@ -1,4 +1,4 @@
 # flower
 ---
 
-我想做一个理想中的调度平台。
+this is a schedule system that verify some idea on biz and data science.
