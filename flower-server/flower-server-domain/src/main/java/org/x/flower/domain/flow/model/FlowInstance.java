@@ -1,16 +1,16 @@
-package org.x.flower.flow.entity;
+package org.x.flower.domain.flow.model;
 
+import com.alibaba.cola.domain.Entity;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
-import java.io.Serializable;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Data
 @Accessors(chain = true)
-public class FlowInstanceDo implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+@Entity
+public class FlowInstance {
 
     private Long id;
 
@@ -32,5 +32,8 @@ public class FlowInstanceDo implements Serializable {
 
     private LocalDateTime updateTime;
 
+    public long getScheduleTriggerTime() {
+        return Timestamp.valueOf(this.scheduleTriggerTime).getTime();
+    }
 
 }

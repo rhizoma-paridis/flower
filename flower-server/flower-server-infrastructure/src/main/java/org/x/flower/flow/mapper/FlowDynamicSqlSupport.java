@@ -13,7 +13,7 @@ public final class FlowDynamicSqlSupport {
 
     public static final SqlColumn<String> flowName = flow.flowName;
 
-    public static final SqlColumn<Byte> isDisable = flow.isDisable;
+    public static final SqlColumn<Boolean> isDisable = flow.isDisable;
 
     public static final SqlColumn<LocalDateTime> nextTriggerTime = flow.nextTriggerTime;
 
@@ -40,7 +40,7 @@ public final class FlowDynamicSqlSupport {
 
         public final SqlColumn<String> flowName = column("flow_name", JDBCType.VARCHAR);
 
-        public final SqlColumn<Byte> isDisable = column("is_disable", JDBCType.TINYINT);
+        public final SqlColumn<Boolean> isDisable = column("is_disable", JDBCType.TINYINT);
 
         public final SqlColumn<LocalDateTime> nextTriggerTime = column("next_trigger_time", JDBCType.TIMESTAMP);
 

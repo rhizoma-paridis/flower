@@ -16,7 +16,7 @@ public class FlowDo implements Serializable {
 
     private String flowName;
 
-    private Byte isDisable;
+    private Boolean isDisable;
 
     private LocalDateTime nextTriggerTime;
 

@@ -1,5 +1,6 @@
 package org.x.flower.domain.flow.model;
 
+import com.alibaba.cola.domain.Entity;
 import lombok.Data;
 import lombok.experimental.Accessors;
 import org.x.flower.domain.flow.model.graph.Graph;
@@ -9,20 +10,37 @@ import java.time.LocalDateTime;
 
 @Data
 @Accessors(chain = true)
+@Entity
 public class Flow implements Job{
 
     private Long id;
-    private String name;
-    private Trigger trigger;
-    private Graph dag;
-    private String desc;
-    /**
-     * 1:success, 2:failed, 3:skip, 4:queued, 5:none, 6:running, 7:upstream_failed
-     */
-    private Integer status;
-    private LocalDateTime createTime;
-    private LocalDateTime updateTIme;
 
+    private String flowName;
+
+    private Byte isDisable;
+
+    private LocalDateTime nextTriggerTime;
+
+    private LocalDateTime startTime;
+
+    private String trigger;
+
+    private Integer triggerType;
+
+    private Integer fillBackSequence;
+
+    private Integer flowType;
+
+    private String desc;
+
+    private LocalDateTime createTime;
+
+    private LocalDateTime updateTime;
+
+    private String dag;
+
+    /*private Trigger trigger;
+    private Graph dag;*/
 
     @Override
     public boolean run() {
@@ -31,5 +49,9 @@ public class Flow implements Job{
 
     public String show() {
         return dag.toString();
+    }
+
+    public Flow refreshScheduleTriggerTime() {
+        return null;
     }
 }
