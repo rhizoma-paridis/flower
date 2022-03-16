@@ -17,13 +17,13 @@ public class Flow implements Job{
 
     private String flowName;
 
-    private Byte isDisable;
+    private Boolean isDisable;
 
     private LocalDateTime nextTriggerTime;
 
     private LocalDateTime startTime;
 
-    private String trigger;
+    private String scheduleInterval;
 
     private Integer triggerType;
 
@@ -31,14 +31,13 @@ public class Flow implements Job{
 
     private Integer flowType;
 
-    private String desc;
+    private String remark;
 
     private LocalDateTime createTime;
 
     private LocalDateTime updateTime;
 
     private String dag;
-
     /*private Trigger trigger;
     private Graph dag;*/
 
