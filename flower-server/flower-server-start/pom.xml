@@ -16,6 +16,11 @@
     <dependencies>
         <dependency>
             <groupId>org.x</groupId>
+            <artifactId>flower-common</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.x</groupId>
             <artifactId>flower-server-adapter</artifactId>
             <version>${flower.server.version}</version>
         </dependency>
@@ -40,8 +45,13 @@
 
         <!--misc-->
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
+
     </dependencies>
 </project>

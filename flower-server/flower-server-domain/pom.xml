@@ -30,6 +30,11 @@
         <!-- flower components-->
         <dependency>
             <groupId>org.x</groupId>
+            <artifactId>flower-common</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.x</groupId>
             <artifactId>flower-server-client</artifactId>
             <version>${flower.server.version}</version>
         </dependency>
