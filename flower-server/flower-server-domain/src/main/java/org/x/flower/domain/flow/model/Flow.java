@@ -1,9 +1,9 @@
-package org.x.flower.domain.flow;
+package org.x.flower.domain.flow.model;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
-import org.x.flower.domain.flow.graph.Graph;
-import org.x.flower.domain.flow.trigger.Trigger;
+import org.x.flower.domain.flow.model.graph.Graph;
+import org.x.flower.domain.flow.model.trigger.Trigger;
 
 import java.time.LocalDateTime;
 

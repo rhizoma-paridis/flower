@@ -1,4 +1,4 @@
-package org.x.flower.domain.flow.trigger;
+package org.x.flower.domain.flow.model.trigger;
 
 public interface Trigger {
 

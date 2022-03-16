@@ -1,4 +1,4 @@
-package org.x.flower.domain.flow.graph;
+package org.x.flower.domain.flow.model.graph;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

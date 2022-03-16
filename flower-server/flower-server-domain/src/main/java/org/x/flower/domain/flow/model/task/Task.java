@@ -1,6 +1,6 @@
-package org.x.flower.domain.flow.task;
+package org.x.flower.domain.flow.model.task;
 
-import org.x.flower.domain.flow.Job;
+import org.x.flower.domain.flow.model.Job;
 
 public class Task implements Job {
     @Override

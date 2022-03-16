@@ -1,4 +1,4 @@
-package org.x.flower.domain.flow;
+package org.x.flower.domain.flow.model;
 
 public interface Job {
 
