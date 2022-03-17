@@ -32,7 +32,7 @@ public class ScheduleService {
     @Async(X_POOL)
     @Scheduled(fixedDelay = FIXED_DELAY)
     public void schedule() {
-        LocalDateTime timeThreshold = LocalDateTime.now().plus(Duration.ofMillis(FIXED_DELAY));
+        LocalDateTime timeThreshold = LocalDateTime.now().plus(Duration.ofMillis(FIXED_DELAY * 2));
         List<Flow> flows = flowGateway.findWaitTriggerFlows(timeThreshold);
         List<FlowInstance> flowInstances = flowInstanceService.initInstance(flows);
 
