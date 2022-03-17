@@ -25,6 +25,7 @@ public class FlowInstanceService {
         ArrayList<FlowInstance> list = Lists.newArrayList();
         flows.forEach(flow -> {
             Optional<FlowInstance> flowInstance = this.findByFlowIdAndScheduleTriggerTime(flow.getId(), flow.getNextTriggerTime());
+            // 跳过已被加入的任务，
             if (!flowInstance.isPresent()) {
                 FlowInstance instance = save(flow);
                 list.add(instance);
@@ -34,7 +35,7 @@ public class FlowInstanceService {
         return list;
     }
 
-    public FlowInstance save(Flow flow) {
+    private FlowInstance save(Flow flow) {
         return null;
     }
 

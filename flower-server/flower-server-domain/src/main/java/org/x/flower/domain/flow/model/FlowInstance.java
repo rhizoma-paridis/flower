@@ -32,7 +32,7 @@ public class FlowInstance {
 
     private LocalDateTime updateTime;
 
-    public long getScheduleTriggerTime() {
+    public long parseScheduleTriggerTime2Long() {
         return Timestamp.valueOf(this.scheduleTriggerTime).getTime();
     }
 

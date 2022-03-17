@@ -32,6 +32,7 @@ public class ScheduleService {
     @Async(X_POOL)
     @Scheduled(fixedDelay = FIXED_DELAY)
     public void schedule() {
+        // 查询任务时间窗口是计划间隔窗口的两倍。
         LocalDateTime timeThreshold = LocalDateTime.now().plus(Duration.ofMillis(FIXED_DELAY * 2));
         List<Flow> flows = flowGateway.findWaitTriggerFlows(timeThreshold);
         List<FlowInstance> flowInstances = flowInstanceService.initInstance(flows);
@@ -48,7 +49,7 @@ public class ScheduleService {
 
     private long getDelay(FlowInstance instance) {
         long now = Instant.now().toEpochMilli();
-        long scheduleTriggerTime = instance.getScheduleTriggerTime();
+        long scheduleTriggerTime = instance.parseScheduleTriggerTime2Long();
         long delay = 0;
         if (scheduleTriggerTime < now) {
             log.warn("[flow-{}] schedule delay, schedule: {}, now: {}", instance.getId(), scheduleTriggerTime, now);
